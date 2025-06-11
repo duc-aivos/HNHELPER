@@ -1,493 +1,351 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hanoi Helpers – Your Gateway to a New Life in Hanoi</title>
-    <meta name="description" content="E-commerce website supporting foreigners living in Hanoi with specialized services in elderly care, legal procedures, and electronic equipment.">
-    <meta name="keywords" content="Hanoi, foreigners, e-commerce, elderly care, legal procedures, electronics, multi-language">
-    <meta name="author" content="Hanoi Helpers">
-    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css">
-    <!--Replace with your tailwind.css once created-->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+    <title>Hanoi Support</title>
+    <link rel="icon" type="image/x-icon" href="imgs/favico.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <style>
-      .gradient {
-        background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
-      }
-      /* Custom image classes for our sections */
-      .hero-img {
-        max-width: 600px;
-        width: 100%;
-        border-radius: 0.5rem;
-        margin: 1rem auto;
-      }
-      .service-img {
-        max-width: 300px;
-        width: 100%;
-        border-radius: 0.5rem;
-        margin: 1rem auto;
-      }
-      .blog-img {
-        max-width: 400px;
-        width: 100%;
-        border-radius: 0.5rem;
-        margin: 0 auto 1rem;
-      }
+        :root {
+            font-family: 'Inter', sans-serif;
+        }
+
+        body,
+        html {
+            scroll-behavior: smooth !important;
+        }
+        /* Custom image styles for services and testimonials */
+        img.service-image {
+            max-width: 100%;
+            height: auto;
+            max-height: 300px;
+            object-fit: cover;
+        }
+        img.testimonial-image {
+            max-width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        /* Contact form input styles */
+        input.contact-input, textarea.contact-input {
+            width: 100%;
+            border: 1px solid #d1d5db;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+        }
     </style>
-  </head>
-  <body class="leading-normal tracking-normal text-gray-800" style="font-family: 'Source Sans Pro', sans-serif;" >
-    <!--Nav-->
-    <nav id="header" class="fixed w-full z-30 top-0 text-gray-800">
-      <div class="w-full container mx-auto flex flex-wrap items-center justify-between py-2">
-        <div class="pl-4 flex items-center">
-          <a class="toggleColour text-pink-600 no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
-            <!--Icon from: http://www.potlabicons.com/ -->
-            <svg class="h-8 fill-current inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.005 512.005">
-              <rect fill="#2a2a31" x="16.539" y="425.626" width="479.767" height="50.502" transform="matrix(1,0,0,1,0,0)"></rect>
-              <path class="plane-take-off" d=" M 510.7 189.151 C 505.271 168.95 484.565 156.956 464.365 162.385 L 330.156 198.367 L 155.924 35.878 L 107.19 49.008 L 211.729 230.183 L 86.232 263.767 L 36.614 224.754 L 0 234.603 L 45.957 314.27 L 65.274 347.727 L 105.802 336.869 L 240.011 300.886 L 349.726 271.469 L 483.935 235.486 C 504.134 230.057 516.129 209.352 510.7 189.151 Z "></path>
-            </svg>
-            Hanoi Hello Helpers
-          </a>
-        </div>
-        <div class="block lg:hidden pr-4">
-          <button id="nav-toggle" class="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-            <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <title>Menu</title>
-              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-            </svg>
-          </button>
-        </div>
-        <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20" id="nav-content">
-          <ul class="list-reset lg:flex justify-end flex-1 items-center">
-            <li class="mr-3">
-              <a class="inline-block py-2 px-4 text-black font-bold no-underline" href="#">Home</a>
-            </li>
-            <li class="mr-3">
-              <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#services">Services</a>
-            </li>
-            <li class="mr-3">
-              <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#blog">Blog</a>
-            </li>
-            <li class="mr-3">
-              <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#contact">Contact</a>
-            </li>
-            <li class="mr-3">
-              <!-- Simple language options -->
-              <a class="inline-block py-2 px-4 text-black font-bold no-underline" href="#">EN</a>
-              <a class="inline-block py-2 px-4 text-black font-bold no-underline" href="#">VI</a>
-              <a class="inline-block py-2 px-4 text-black font-bold no-underline" href="#">FR</a>
-            </li>
-          </ul>
-          <button id="navAction" class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full py-2 px-4 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-            Buy Now
-          </button>
-        </div>
-      </div>
-      <hr class="border-b border-gray-100 opacity-25 my-0 py-0">
-    </nav>
-    <!--Hero-->
-    <div class="pt-24 bg-gray-100">
-      <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
-        <!--Left Column – Hero Text-->
-        <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
-          <p class="uppercase tracking-loose w-full text-pink-600">Welcome to Hanoi Helpers</p>
-          <h1 class="my-4 text-5xl font-bold leading-tight text-gray-800">
-            Making Life in Hanoi Easier for Foreigners
-          </h1>
-          <p class="leading-normal text-2xl mb-8">
-            Explore our trusted services in elderly care, legal support, and electronic equipment – all tailored to your needs.
-          </p>
-          <button class="mx-auto lg:mx-0 hover:underline bg-pink-600 text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-            Get Started
-          </button>
-        </div>
-        <!--Right Column – Hero Image-->
-        <div class="w-full md:w-3/5 py-6 text-center">
-          <img class="hero-img" src="https://images.unsplash.com/photo-1559234938-b60fff04894d?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3MzQ0MzV8MHwxfHNlYXJjaHwxfHxFbGRlcmx5fGVufDB8fHx8MTc0OTYzMzM2NHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Elderly couple taking a walk through the park">
-        </div>
-      </div>
-    </div>
-    <!-- Services Section -->
-    <section id="services" class="bg-white border-b py-8">
-      <div class="container mx-auto max-w-5xl m-8">
-        <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
-          Our Services
-        </h2>
-        <div class="w-full mb-4">
-          <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
-        </div>
-        <div class="flex flex-wrap -mx-4">
-          <!-- Elderly Care -->
-          <div class="w-full md:w-1/3 px-4 py-4">
-            <div class="bg-gray-50 rounded-lg shadow p-6 h-full">
-              <img class="service-img" src="https://images.unsplash.com/photo-1575467678930-c7acd65d6470?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3MzQ0MzV8MHwxfHNlYXJjaHw0fHxFbGRlcmx5fGVufDB8fHx8MTc0OTYzMzM2NHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Elderly woman cleaning vegetables">
-              <h3 class="text-2xl font-bold text-gray-800 mt-4">Elderly Care</h3>
-              <p class="text-gray-600 mt-2">
-                Personalized support for elderly expats—from daily assistance and companionship to healthcare guidance. We understand the importance of maintaining dignity and independence.
-              </p>
-              <p class="text-gray-800 font-bold mt-4">Starting at: £29.99/day</p>
-              <p class="mt-2"><strong>Contact:</strong> care@hanohelpers.com | +84 123 456 789</p>
-            </div>
-          </div>
-          <!-- Legal Procedures -->
-          <div class="w-full md:w-1/3 px-4 py-4">
-            <div class="bg-gray-50 rounded-lg shadow p-6 h-full">
-              <img class="service-img" src="https://images.unsplash.com/photo-1513159446162-54eb8bdaa79b?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3MzQ0MzV8MHwxfHNlYXJjaHwyfHxFbGRlcmx5fGVufDB8fHx8MTc0OTYzMzM2NHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Two men playing chess symbolizing legal strategy">
-              <h3 class="text-2xl font-bold text-gray-800 mt-4">Legal Procedures</h3>
-              <p class="text-gray-600 mt-2">
-                Expert assistance for visas, property regulations, business licenses and more. Our legal advisors ensure you have all the support to navigate Hanoi’s legal landscape.
-              </p>
-              <p class="text-gray-800 font-bold mt-4">Consultation: £49.99/hr</p>
-              <p class="mt-2"><strong>Contact:</strong> legal@hanohelpers.com | +84 987 654 321</p>
-            </div>
-          </div>
-          <!-- Electronic Equipment -->
-          <div class="w-full md:w-1/3 px-4 py-4">
-            <div class="bg-gray-50 rounded-lg shadow p-6 h-full">
-              <img class="service-img" src="https://images.unsplash.com/photo-1454875392665-2ac2c85e8d3e?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3MzQ0MzV8MHwxfHNlYXJjaHwzfHxFbGRlcmx5fGVufDB8fHx8MTc0OTYzMzM2NHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Close-up hand which reflects modern precision">
-              <h3 class="text-2xl font-bold text-gray-800 mt-4">Electronic Equipment</h3>
-              <p class="text-gray-600 mt-2">
-                Shop the latest gadgets and appliances ideal for expats. We source high-quality electronic products with local warranties and dedicated after-sales support.
-              </p>
-              <p class="text-gray-800 font-bold mt-4">Prices from: £19.99</p>
-              <p class="mt-2"><strong>Contact:</strong> tech@hanohelpers.com | +84 555 666 777</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Blog Section -->
-    <section id="blog" class="bg-gray-100 border-b py-8">
-      <div class="container mx-auto max-w-5xl m-8">
-        <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
-          From Our Blog
-        </h2>
-        <div class="w-full mb-4">
-          <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
-        </div>
-        <div class="flex flex-wrap -mx-4">
-          <!-- Blog Post 1 -->
-          <div class="w-full md:w-1/3 px-4 py-4">
-            <div class="bg-white rounded-lg shadow p-6 h-full">
-              <img class="blog-img" src="https://images.unsplash.com/photo-1661933012684-d2ab1d613258?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3MzQ0MzV8MHwxfHNlYXJjaHw1fHxFbGRlcmx5fGVufDB8fHx8MTc0OTYzMzM2NHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="A man sitting in a park">
-              <h3 class="text-2xl font-bold text-gray-800 mt-4">Living in Hanoi: A Foreigner’s Guide</h3>
-              <p class="text-gray-600 mt-2">
-                Discover tips and tricks about navigating the bustling city of Hanoi—from cultural etiquette to finding the best local eateries.
-              </p>
-              <a href="#" class="text-pink-600 font-bold mt-4 inline-block">Read More</a>
-            </div>
-          </div>
-          <!-- Blog Post 2 -->
-          <div class="w-full md:w-1/3 px-4 py-4">
-            <div class="bg-white rounded-lg shadow p-6 h-full">
-              <img class="blog-img" src="https://images.unsplash.com/photo-1534768654272-e97681c3a2c7?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3MzQ0MzV8MHwxfHNlYXJjaHw3fHxFbGRlcmx5fGVufDB8fHx8MTc0OTYzMzM2NHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="A touching moment between a mother and her great grandson">
-              <h3 class="text-2xl font-bold text-gray-800 mt-4">Building Connections in a New City</h3>
-              <p class="text-gray-600 mt-2">
-                Read inspiring stories from expats who found family, friendship, and support while adjusting to life in Hanoi.
-              </p>
-              <a href="#" class="text-pink-600 font-bold mt-4 inline-block">Read More</a>
-            </div>
-          </div>
-          <!-- Blog Post 3 -->
-          <div class="w-full md:w-1/3 px-4 py-4">
-            <div class="bg-white rounded-lg shadow p-6 h-full">
-              <img class="blog-img" src="https://images.unsplash.com/photo-1517267667008-3b8018f4b4f7?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3MzQ0MzV8MHwxfHNlYXJjaHw4fHxFbGRlcmx5fGVufDB8fHx8MTc0OTYzMzM2NHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Signore anziano during the golden hour">
-              <h3 class="text-2xl font-bold text-gray-800 mt-4">Navigating Legal Hurdles in Hanoi</h3>
-              <p class="text-gray-600 mt-2">
-                Our experts break down the legal procedures and paperwork needed for residency, business establishment, and more.
-              </p>
-              <a href="#" class="text-pink-600 font-bold mt-4 inline-block">Read More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Contact Section with Form -->
-    <section id="contact" class="bg-white border-b py-8">
-      <div class="container mx-auto max-w-3xl m-8">
-        <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
-          Get in Touch
-        </h2>
-        <div class="w-full mb-4">
-          <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
-        </div>
-        <div class="w-full mt-8">
-          <form action="#" method="post" class="w-full max-w-lg mx-auto">
-            <div class="flex flex-wrap -mx-3 mb-6">
-              <div class="w-full px-3 mb-6 md:mb-0">
-                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="name">
-                  Name
-                </label>
-                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white" id="name" type="text" placeholder="Your Name">
-              </div>
-            </div>
-            <div class="flex flex-wrap -mx-3 mb-6">
-              <div class="w-full px-3">
-                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="email">
-                  Email
-                </label>
-                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white" id="email" type="email" placeholder="you@example.com">
-              </div>
-            </div>
-            <div class="flex flex-wrap -mx-3 mb-6">
-              <div class="w-full px-3">
-                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="message">
-                  Message
-                </label>
-                <textarea class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white" id="message" rows="5" placeholder="How can we help you?"></textarea>
-              </div>
-            </div>
-            <div class="md:flex md:items-center">
-              <div class="md:w-1/3">
-                <button class="shadow bg-pink-600 hover:bg-pink-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit">
-                  Send Message
+</head>
+
+<body class="antialiased px-4 md:px-0">
+    <header>
+        <div class="mx-auto sm:px-7 px-4 max-w-screen-xl py-7">
+            <div class="flex items-center">
+                <a href="#hero" style="font-family: 'Nothing You Could Do', cursive;"
+                    class="text-xl font-bold">HanoiSupport</a>
+                <nav class="ml-8">
+                    <ul class="flex space-x-4">
+                        <li><a href="#hero" class="hover:underline">Home</a></li>
+                        <li><a href="#elderly" class="hover:underline">Elderly Care</a></li>
+                        <li><a href="#legal" class="hover:underline">Legal Assistance</a></li>
+                        <li><a href="#electronics" class="hover:underline">Electronics</a></li>
+                        <li><a href="#testimonials" class="hover:underline">Testimonials</a></li>
+                        <li><a href="#contact" class="hover:underline">Contact</a></li>
+                    </ul>
+                </nav>
+                <button
+                    class="ml-auto bg-black rounded-lg hover:bg-black/80 duration-300 transition-colors border border-transparent px-8 py-2.5">
+                    <svg class="w-5 h-5 sm:h-6 sm:w-6" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M7 4h-2l-1 2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.11.9 2 2 2h12v-2h-12l1.1-2h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.3.12-.48 0-.55-.45-1-1-1h-14zm0 0"
+                            fill="white" />
+                    </svg>
                 </button>
-              </div>
-              <div class="md:w-2/3"></div>
             </div>
-          </form>
         </div>
-      </div>
+    </header>
+    
+    <section id="hero">
+        <div class="mx-auto sm:px-7 px-4 max-w-screen-lg py-10 pb-20">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div style="min-width:300px;" data-aos="fade-right" data-aos-delay="50">
+                    <!-- Using the 10th image for the hero section -->
+                    <img class="service-image" src="https://images.unsplash.com/photo-1700911806226-05e1f2058390?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MzQ0MzV8MHwxfHNlYXJjaHw5fHwlMjJTdXBwb3J0JTIyfGVufDB8fHx8MTc0OTYzMzM2NXww&ixlib=rb-4.1.0&q=80&w=1080" alt="Supporting Foreigners in Hanoi">
+                </div>
+                <div data-aos="fade-left" data-aos-delay="200">
+                    <h1 class="text-2xl font-bold lg:text-5xl pb-8">
+                        Welcome to HanoiSupport
+                    </h1>
+                    <p class="text-xl pb-8">
+                        Your one-stop e-commerce hub dedicated to supporting foreigners living in Hanoi. 
+                        From elderly care services and legal assistance to the latest in electronic devices – 
+                        we bring you quality support, transparent pricing, and genuine user testimonials.
+                    </p>
+                    <a href="#contact"
+                        class="mb-8 inline-block text-white bg-black rounded-lg hover:bg-black/80 duration-300 transition-colors border border-transparent px-8 py-2.5">
+                        Shop Services <i class="bi bi-arrow-right"></i>
+                    </a>
+                    <div class="bg-gray-100 p-5 rounded max-w-[292px] flex gap-2 items-center text-center">
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-gray-900 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                            </svg>
+                            <svg class="w-5 h-5 text-gray-900 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                            </svg>
+                            <svg class="w-5 h-5 text-gray-900 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                            </svg>
+                            <svg class="w-5 h-5 text-gray-900 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                            </svg>
+                            <svg class="w-5 h-5 text-gray-900 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                            </svg>
+                        </div>
+                        <span class="text-dark text-xs">4.9/5 (275k Reviews)</span>
+                    </div>                    
+                </div>
+            </div>
+        </div>
     </section>
-    <!-- Pricing Section -->
-    <section class="bg-gray-100 py-8">
-      <div class="container mx-auto max-w-5xl px-2 pt-4 pb-12 text-gray-800">
-        <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
-          Pricing Plans
-        </h2>
-        <div class="w-full mb-4">
-          <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+
+    <!-- Elderly Care Services Section -->
+    <section id="elderly">
+        <div class="mx-auto sm:px-7 px-4 max-w-screen-xl py-20">
+            <h2 class="text-3xl font-bold lg:text-4xl pb-8">Elderly Care Services</h2>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div data-aos="fade-right" data-aos-delay="50">
+                    <!-- Using first image for Elderly Care -->
+                    <img class="service-image" src="https://images.unsplash.com/photo-1700911639640-854353c0465f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MzQ0MzV8MHwxfHNlYXJjaHwxfHwlMjJTdXBwb3J0JTIyfGVufDB8fHx8MTc0OTYzMzM2NXww&ixlib=rb-4.1.0&q=80&w=1080" alt="Elderly Care Service">
+                </div>
+                <div data-aos="fade-left" data-aos-delay="200">
+                    <p class="text-xl pb-4">
+                        Our Elderly Care Services provide compassionate professional support for your loved ones. We offer personalized daily assistance, home visits, medication management, and specialized care packages designed to ensure the highest quality of life. Packages start at <span class="font-bold">$200/month</span>.
+                    </p>
+                    <p class="text-lg text-gray-600">
+                        Our experienced caregivers are trained to offer both emotional and physical support, ensuring
+                        that seniors feel safe, comfortable, and cared for in their own home.
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="flex flex-col sm:flex-row justify-center pt-12 my-12 sm:my-4">
-          <!-- Free Plan -->
-          <div class="flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-none lg:rounded-l-lg bg-white mt-4">
-            <div class="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow">
-              <div class="p-8 text-3xl font-bold text-center border-b-4">
-                Basic
-              </div>
-              <ul class="w-full text-center text-sm">
-                <li class="border-b py-4">Access to Blog Articles</li>
-                <li class="border-b py-4">Community Support</li>
-                <li class="border-b py-4">Basic Service Info</li>
-              </ul>
-            </div>
-            <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
-              <div class="w-full pt-6 text-3xl text-gray-600 font-bold text-center">
-                Free
-                <span class="text-base">for one user</span>
-              </div>
-              <div class="flex items-center justify-center">
-                <button class="mx-auto hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                  Sign Up
-                </button>
-              </div>
-            </div>
-          </div>
-          <!-- Premium Plan -->
-          <div class="flex flex-col w-5/6 lg:w-1/3 mx-auto lg:mx-0 rounded-lg bg-white mt-4 sm:-mt-6 shadow-lg z-10">
-            <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
-              <div class="w-full p-8 text-3xl font-bold text-center">Premium</div>
-              <div class="h-1 w-full gradient my-0 py-0 rounded-t"></div>
-              <ul class="w-full text-center text-base font-bold">
-                <li class="border-b py-4">All Basic Features</li>
-                <li class="border-b py-4">Priority Customer Support</li>
-                <li class="border-b py-4">Exclusive Service Discounts</li>
-                <li class="border-b py-4">Legal &amp; Tech Consultations</li>
-              </ul>
-            </div>
-            <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
-              <div class="w-full pt-6 text-4xl font-bold text-center">
-                £x.99
-                <span class="text-base">/ per user</span>
-              </div>
-              <div class="flex items-center justify-center">
-                <button class="mx-auto hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                  Sign Up
-                </button>
-              </div>
-            </div>
-          </div>
-          <!-- Pro Plan -->
-          <div class="flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-none lg:rounded-r-lg bg-white mt-4">
-            <div class="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow">
-              <div class="p-8 text-3xl font-bold text-center border-b-4">
-                Pro
-              </div>
-              <ul class="w-full text-center text-sm">
-                <li class="border-b py-4">All Premium Features</li>
-                <li class="border-b py-4">Dedicated Account Manager</li>
-                <li class="border-b py-4">24/7 Customer Support</li>
-              </ul>
-            </div>
-            <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
-              <div class="w-full pt-6 text-3xl text-gray-600 font-bold text-center">
-                £x.99
-                <span class="text-base">/ per user</span>
-              </div>
-              <div class="flex items-center justify-center">
-                <button class="mx-auto hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                  Sign Up
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
-    <!-- Call to Action / Contact Reminder -->
-    <section class="container mx-auto text-center py-6 mb-12">
-      <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
-        Ready to Begin Your Journey?
-      </h2>
-      <div class="w-full mb-4">
-        <div class="h-1 mx-auto bg-pink-600 w-1/6 opacity-25 my-0 py-0 rounded-t"></div>
-      </div>
-      <h3 class="my-4 text-3xl leading-tight">
-        Explore our services and get personalized support tailored for your new life in Hanoi.
-      </h3>
-      <button onclick="document.getElementById('contact').scrollIntoView();" class="mx-auto hover:underline bg-pink-600 text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-        Contact Us
-      </button>
-    </section>
-    <!--Footer-->
-    <footer class="bg-white">
-      <div class="container mx-auto px-8">
-        <div class="w-full flex flex-col md:flex-row py-6">
-          <div class="flex-1 mb-6 text-black">
-            <a class="text-pink-600 no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
-              <svg class="h-8 fill-current inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.005 512.005">
-                <rect fill="#2a2a31" x="16.539" y="425.626" width="479.767" height="50.502" transform="matrix(1,0,0,1,0,0)"></rect>
-                <path class="plane-take-off" d=" M 510.7 189.151 C 505.271 168.95 484.565 156.956 464.365 162.385 L 330.156 198.367 L 155.924 35.878 L 107.19 49.008 L 211.729 230.183 L 86.232 263.767 L 36.614 224.754 L 0 234.603 L 45.957 314.27 L 65.274 347.727 L 105.802 336.869 L 240.011 300.886 L 349.726 271.469 L 483.935 235.486 C 504.134 230.057 516.129 209.352 510.7 189.151 Z "></path>
-              </svg>
-              Hanoi Helpers
-            </a>
-          </div>
-          <div class="flex-1">
-            <p class="uppercase text-gray-500 md:mb-6">Links</p>
-            <ul class="list-reset mb-6">
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#faq" class="no-underline hover:underline text-gray-800 hover:text-pink-500">FAQ</a>
-              </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#help" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Help</a>
-              </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#support" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Support</a>
-              </li>
-            </ul>
-          </div>
-          <div class="flex-1">
-            <p class="uppercase text-gray-500 md:mb-6">Legal</p>
-            <ul class="list-reset mb-6">
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#terms" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Terms</a>
-              </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#privacy" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Privacy</a>
-              </li>
-            </ul>
-          </div>
-          <div class="flex-1">
-            <p class="uppercase text-gray-500 md:mb-6">Social</p>
-            <ul class="list-reset mb-6">
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="https://www.facebook.com" class="no-underline hover:underline text-gray-800 hover:text-pink-500" target="_blank">Facebook</a>
-              </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="https://www.linkedin.com" class="no-underline hover:underline text-gray-800 hover:text-pink-500" target="_blank">Linkedin</a>
-              </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="https://www.twitter.com" class="no-underline hover:underline text-gray-800 hover:text-pink-500" target="_blank">Twitter</a>
-              </li>
-            </ul>
-          </div>
-          <div class="flex-1">
-            <p class="uppercase text-gray-500 md:mb-6">Company</p>
-            <ul class="list-reset mb-6">
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#blog" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Official Blog</a>
-              </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#about" class="no-underline hover:underline text-gray-800 hover:text-pink-500">About Us</a>
-              </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#contact" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Contact</a>
-              </li>
-            </ul>
-          </div>
+
+    <!-- Legal Assistance Section -->
+    <section id="legal" class="bg-[#f1f1f1]">
+        <div class="mx-auto sm:px-7 px-4 max-w-screen-xl py-20">
+            <h2 class="text-3xl font-bold lg:text-4xl pb-8">Legal Procedures Assistance</h2>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div data-aos="fade-right" data-aos-delay="50">
+                    <!-- Using second image for Legal Assistance -->
+                    <img class="service-image" src="https://images.unsplash.com/photo-1700911749904-401c48024c46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MzQ0MzV8MHwxfHNlYXJjaHwyfHwlMjJTdXBwb3J0JTIyfGVufDB8fHx8MTc0OTYzMzM2NXww&ixlib=rb-4.1.0&q=80&w=1080" alt="Legal Assistance">
+                </div>
+                <div data-aos="fade-left" data-aos-delay="200">
+                    <p class="text-xl pb-4">
+                        Navigating legal procedures in a foreign country can be overwhelming. Our dedicated legal experts assist with visa applications, permits, property law, business registrations, and more. Consultation packages start at <span class="font-bold">$150</span>.
+                    </p>
+                    <p class="text-lg text-gray-600">
+                        We ensure transparent pricing, clear guidance, and expert advice so you can confidently manage legal challenges.
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
-      <a href="https://www.freepik.com/free-photos-vectors/background" class="text-gray-500 block text-center py-4">Background vector created by freepik - www.freepik.com</a>
+    </section>
+
+    <!-- Electronic Devices Information Section -->
+    <section id="electronics">
+        <div class="mx-auto sm:px-7 px-4 max-w-screen-xl py-20">
+            <h2 class="text-3xl font-bold lg:text-4xl pb-8">Electronic Devices Information</h2>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div data-aos="fade-right" data-aos-delay="50">
+                    <!-- Using third image for Electronic Devices -->
+                    <img class="service-image" src="https://images.unsplash.com/photo-1700911761955-67b6f2b06029?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MzQ0MzV8MHwxfHNlYXJjaHwzfHwlMjJTdXBwb3J0JTIyfGVufDB8fHx8MTc0OTYzMzM2NXww&ixlib=rb-4.1.0&q=80&w=1080" alt="Electronic Devices">
+                </div>
+                <div data-aos="fade-left" data-aos-delay="200">
+                    <p class="text-xl pb-4">
+                        Stay ahead with our comprehensive information and reviews on the latest electronic devices available in Hanoi. 
+                        Whether you're looking for smartphones, laptops, or smart home accessories, our expert recommendations and competitive pricing (starting at <span class="font-bold">$50</span>) have got you covered.
+                    </p>
+                    <p class="text-lg text-gray-600">
+                        We help you make an informed decision by providing detailed specifications, pricing comparisons, and user ratings.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="bg-[#f1f1f1]">
+        <div class="mx-auto sm:px-7 px-4 max-w-screen-xl py-20">
+            <h2 class="text-3xl font-bold lg:text-4xl pb-8">
+                What Our Customers Say
+            </h2>
+            <div class="swiper">
+                <div class="swiper-wrapper items-center flex flex-row">
+                    <div class="swiper-slide">
+                        <div class="flex flex-col gap-8">
+                            <div class="bg-gradient-to-b from-slate-50 to-slate-100 w-72 shadow-lg mx-auto rounded-xl p-4">
+                                <p class="text-gray-600">
+                                    <span class="text-lg font-bold text-slate-800">“</span>
+                                    HanoiSupport made it so easy to find quality care for my elderly parents. Their service is reliable and affordable.
+                                    <span class="text-lg font-bold text-slate-800">”</span>
+                                </p>
+                                <div class="flex items-center mt-4">
+                                    <a href="#" class="relative block">
+                                        <img alt="testimonial" src="https://images.unsplash.com/photo-1700911798730-be8a199e8cce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MzQ0MzV8MHwxfHNlYXJjaHw1fHwlMjJTdXBwb3J0JTIyfGVufDB8fHx8MTc0OTYzMzM2NXww&ixlib=rb-4.1.0&q=80&w=1080" class="testimonial-image">
+                                    </a>
+                                    <div class="flex flex-col justify-between ml-2">
+                                        <span class="text-sm font-semibold text-slate-800">Minh Nguyen</span>
+                                        <span class="flex items-center text-xs">User - Elderly Care</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-gradient-to-b from-slate-50 to-slate-100 w-72 shadow-lg mx-auto rounded-xl p-4">
+                                <p class="text-gray-600">
+                                    <span class="text-lg font-bold text-slate-800">“</span>
+                                    The legal advice provided was clear and trustworthy. Their fee structure is upfront and fair.
+                                    <span class="text-lg font-bold text-slate-800">”</span>
+                                </p>
+                                <div class="flex items-center mt-4">
+                                    <a href="#" class="relative block">
+                                        <img alt="testimonial" src="https://images.unsplash.com/photo-1700911798616-381ed7cb38c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MzQ0MzV8MHwxfHNlYXJjaHw2fHwlMjJTdXBwb3J0JTIyfGVufDB8fHx8MTc0OTYzMzM2NXww&ixlib=rb-4.1.0&q=80&w=1080" class="testimonial-image">
+                                    </a>
+                                    <div class="flex flex-col justify-between ml-2">
+                                        <span class="text-sm font-semibold text-slate-800">Anna Smith</span>
+                                        <span class="flex items-center text-xs">User - Legal Assistance</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="flex flex-col gap-8">
+                            <div class="bg-gradient-to-b from-slate-50 to-slate-100 w-72 shadow-lg mx-auto rounded-xl p-4">
+                                <p class="text-gray-600">
+                                    <span class="text-lg font-bold text-slate-800">“</span>
+                                    I got excellent recommendations on the latest gadgets. Their insights helped me choose the perfect laptop.
+                                    <span class="text-lg font-bold text-slate-800">”</span>
+                                </p>
+                                <div class="flex items-center mt-4">
+                                    <a href="#" class="relative block">
+                                        <img alt="testimonial" src="https://images.unsplash.com/photo-1700911746057-309f0eff385d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MzQ0MzV8MHwxfHNlYXJjaHw3fHwlMjJTdXBwb3J0JTIyfGVufDB8fHx8MTc0OTYzMzM2NXww&ixlib=rb-4.1.0&q=80&w=1080" class="testimonial-image">
+                                    </a>
+                                    <div class="flex flex-col justify-between ml-2">
+                                        <span class="text-sm font-semibold text-slate-800">David Lee</span>
+                                        <span class="flex items-center text-xs">User - Electronics</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-gradient-to-b from-slate-50 to-slate-100 w-72 shadow-lg mx-auto rounded-xl p-4">
+                                <p class="text-gray-600">
+                                    <span class="text-lg font-bold text-slate-800">“</span>
+                                    Exceptional service and customer care – from elderly support to legal help, HanoiSupport truly delivers.
+                                    <span class="text-lg font-bold text-slate-800">”</span>
+                                </p>
+                                <div class="flex items-center mt-4">
+                                    <a href="#" class="relative block">
+                                        <img alt="testimonial" src="https://images.unsplash.com/photo-1700911754169-8614bb39d53a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MzQ0MzV8MHwxfHNlYXJjaHw4fHwlMjJTdXBwb3J0JTIyfGVufDB8fHx8MTc0OTYzMzM2NXww&ixlib=rb-4.1.0&q=80&w=1080" class="testimonial-image">
+                                    </a>
+                                    <div class="flex flex-col justify-between ml-2">
+                                        <span class="text-sm font-semibold text-slate-800">Sara Tran</span>
+                                        <span class="flex items-center text-xs">International Client</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact">
+        <div class="mx-auto sm:px-7 px-4 max-w-screen-xl py-20">
+            <h2 class="text-3xl font-bold lg:text-4xl pb-8">Get in Touch</h2>
+            <p class="text-lg pb-8">Have questions or need further assistance? Fill out the form below, and our team will respond promptly.</p>
+            <form class="max-w-lg mx-auto space-y-6">
+                <div>
+                    <label for="name" class="block text-base font-medium text-gray-700">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" class="contact-input mt-1">
+                </div>
+                <div>
+                    <label for="email" class="block text-base font-medium text-gray-700">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" class="contact-input mt-1">
+                </div>
+                <div>
+                    <label for="message" class="block text-base font-medium text-gray-700">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Your Message" class="contact-input mt-1"></textarea>
+                </div>
+                <button type="submit" class="bg-black text-white rounded-lg px-8 py-2.5 hover:bg-black/80 duration-300 transition-colors">
+                    Submit Inquiry
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-[#f1f1f1]">
+        <div class="mx-auto sm:px-7 px-4 max-w-screen-xl py-10">
+            <div class="flex items-center">
+                <p class="mb-8 text-sm text-center text-gray-700 md:text-left md:mb-0">© Copyright 2020 Skcript. All
+                    Rights Reserved.</p>
+                <button
+                    class="ml-auto bg-black rounded-lg hover:bg-black/80 duration-300 transition-colors border border-transparent px-8 py-2.5">
+                    <svg class="w-5 h-5 sm:h-6 sm:w-6" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M20.8426 17.1449C20.5099 17.9135 20.1161 18.6211 19.6598 19.2715C19.0378 20.1583 18.5286 20.7721 18.1361 21.113C17.5277 21.6724 16.8759 21.959 16.1779 21.9753C15.6768 21.9753 15.0725 21.8327 14.3691 21.5434C13.6633 21.2555 13.0148 21.113 12.4217 21.113C11.7998 21.113 11.1327 21.2555 10.4193 21.5434C9.70469 21.8327 9.12904 21.9834 8.68892 21.9984C8.01957 22.0269 7.35239 21.7322 6.68644 21.113C6.26139 20.7422 5.72974 20.1067 5.09285 19.2063C4.40951 18.2449 3.84772 17.13 3.4076 15.8589C2.93624 14.486 2.69995 13.1565 2.69995 11.8694C2.69995 10.3951 3.01853 9.12345 3.65665 8.05784C4.15815 7.20191 4.82533 6.52672 5.66035 6.03105C6.49537 5.53539 7.39761 5.2828 8.36925 5.26664C8.9009 5.26664 9.59809 5.43109 10.4645 5.75429C11.3284 6.07858 11.8832 6.24303 12.1264 6.24303C12.3082 6.24303 12.9245 6.05074 13.9692 5.66738C14.9571 5.31186 15.7909 5.16466 16.474 5.22264C18.3249 5.37202 19.7155 6.10167 20.6402 7.41619C18.9849 8.4192 18.166 9.82403 18.1823 11.6262C18.1972 13.03 18.7065 14.1981 19.7073 15.1256C20.1609 15.5561 20.6674 15.8888 21.231 16.1251C21.1087 16.4795 20.9797 16.819 20.8426 17.1449ZM16.5975 0.440369C16.5975 1.54062 16.1956 2.56792 15.3944 3.51878C14.4275 4.64917 13.258 5.30236 11.9898 5.19929C11.9736 5.06729 11.9642 4.92837 11.9642 4.78239C11.9642 3.72615 12.424 2.59576 13.2406 1.67152C13.6483 1.20356 14.1667 0.814453 14.7955 0.504058C15.4229 0.198295 16.0163 0.0292007 16.5744 0.000244141C16.5907 0.147331 16.5975 0.294426 16.5975 0.440355V0.440369Z"
+                            fill="white" />
+                    </svg>
+                </button>
+            </div>
+        </div>
     </footer>
-    <!-- jQuery if you need it
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  -->
+
     <script>
-      var scrollpos = window.scrollY;
-      var header = document.getElementById("header");
-      var navcontent = document.getElementById("nav-content");
-      var navaction = document.getElementById("navAction");
-      var toToggle = document.querySelectorAll(".toggleColour");
-
-      document.addEventListener("scroll", function () {
-        scrollpos = window.scrollY;
-
-        if (scrollpos > 10) {
-          header.classList.add("bg-white");
-          navaction.classList.remove("bg-white");
-          navaction.classList.add("gradient");
-          navaction.classList.remove("text-gray-800");
-          navaction.classList.add("text-white");
-          for (var i = 0; i < toToggle.length; i++) {
-            toToggle[i].classList.add("text-gray-800");
-            toToggle[i].classList.remove("text-white");
-          }
-          header.classList.add("shadow");
-          navcontent.classList.remove("bg-gray-100");
-          navcontent.classList.add("bg-white");
-        } else {
-          header.classList.remove("bg-white");
-          navaction.classList.remove("gradient");
-          navaction.classList.add("bg-white");
-          navaction.classList.remove("text-white");
-          navaction.classList.add("text-gray-800");
-          for (var i = 0; i < toToggle.length; i++) {
-            toToggle[i].classList.add("text-white");
-            toToggle[i].classList.remove("text-gray-800");
-          }
-          header.classList.remove("shadow");
-          navcontent.classList.remove("bg-white");
-          navcontent.classList.add("bg-gray-100");
-        }
-      });
-    </script>
-    <script>
-      var navMenuDiv = document.getElementById("nav-content");
-      var navMenu = document.getElementById("nav-toggle");
-
-      document.onclick = check;
-      function check(e) {
-        var target = (e && e.target) || (event && event.srcElement);
-        if (!checkParent(target, navMenuDiv)) {
-          if (checkParent(target, navMenu)) {
-            if (navMenuDiv.classList.contains("hidden")) {
-              navMenuDiv.classList.remove("hidden");
-            } else {
-              navMenuDiv.classList.add("hidden");
+        const swiper = new Swiper('.swiper', {
+            slidesPerView: 4,
+            spaceBetween: 10,
+            loop: true,
+            autoplay: {
+                delay: 5000
+            },
+            freeMode: true,
+            breakpoints: {
+                1320: {
+                    slidesPerView: 4
+                },
+                1000: {
+                    slidesPerView: 3
+                },
+                700: {
+                    slidesPerView: 2
+                },
+                100: {
+                    slidesPerView: 1
+                }
             }
-          } else {
-            navMenuDiv.classList.add("hidden");
-          }
-        }
-      }
-      function checkParent(t, elm) {
-        while (t.parentNode) {
-          if (t == elm) {
-            return true;
-          }
-          t = t.parentNode;
-        }
-        return false;
-      }
+        });
     </script>
-  
-</body></html>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
