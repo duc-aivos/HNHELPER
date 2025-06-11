@@ -1,0 +1,493 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hanoi Helpers – Your Gateway to a New Life in Hanoi</title>
+    <meta name="description" content="E-commerce website supporting foreigners living in Hanoi with specialized services in elderly care, legal procedures, and electronic equipment.">
+    <meta name="keywords" content="Hanoi, foreigners, e-commerce, elderly care, legal procedures, electronics, multi-language">
+    <meta name="author" content="Hanoi Helpers">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <!--Replace with your tailwind.css once created-->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+    <style>
+      .gradient {
+        background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+      }
+      /* Custom image classes for our sections */
+      .hero-img {
+        max-width: 600px;
+        width: 100%;
+        border-radius: 0.5rem;
+        margin: 1rem auto;
+      }
+      .service-img {
+        max-width: 300px;
+        width: 100%;
+        border-radius: 0.5rem;
+        margin: 1rem auto;
+      }
+      .blog-img {
+        max-width: 400px;
+        width: 100%;
+        border-radius: 0.5rem;
+        margin: 0 auto 1rem;
+      }
+    </style>
+  </head>
+  <body class="leading-normal tracking-normal text-gray-800" style="font-family: 'Source Sans Pro', sans-serif;" >
+    <!--Nav-->
+    <nav id="header" class="fixed w-full z-30 top-0 text-gray-800">
+      <div class="w-full container mx-auto flex flex-wrap items-center justify-between py-2">
+        <div class="pl-4 flex items-center">
+          <a class="toggleColour text-pink-600 no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
+            <!--Icon from: http://www.potlabicons.com/ -->
+            <svg class="h-8 fill-current inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.005 512.005">
+              <rect fill="#2a2a31" x="16.539" y="425.626" width="479.767" height="50.502" transform="matrix(1,0,0,1,0,0)"></rect>
+              <path class="plane-take-off" d=" M 510.7 189.151 C 505.271 168.95 484.565 156.956 464.365 162.385 L 330.156 198.367 L 155.924 35.878 L 107.19 49.008 L 211.729 230.183 L 86.232 263.767 L 36.614 224.754 L 0 234.603 L 45.957 314.27 L 65.274 347.727 L 105.802 336.869 L 240.011 300.886 L 349.726 271.469 L 483.935 235.486 C 504.134 230.057 516.129 209.352 510.7 189.151 Z "></path>
+            </svg>
+            Hanoi Hello Helpers
+          </a>
+        </div>
+        <div class="block lg:hidden pr-4">
+          <button id="nav-toggle" class="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+            <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <title>Menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20" id="nav-content">
+          <ul class="list-reset lg:flex justify-end flex-1 items-center">
+            <li class="mr-3">
+              <a class="inline-block py-2 px-4 text-black font-bold no-underline" href="#">Home</a>
+            </li>
+            <li class="mr-3">
+              <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#services">Services</a>
+            </li>
+            <li class="mr-3">
+              <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#blog">Blog</a>
+            </li>
+            <li class="mr-3">
+              <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#contact">Contact</a>
+            </li>
+            <li class="mr-3">
+              <!-- Simple language options -->
+              <a class="inline-block py-2 px-4 text-black font-bold no-underline" href="#">EN</a>
+              <a class="inline-block py-2 px-4 text-black font-bold no-underline" href="#">VI</a>
+              <a class="inline-block py-2 px-4 text-black font-bold no-underline" href="#">FR</a>
+            </li>
+          </ul>
+          <button id="navAction" class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full py-2 px-4 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+            Buy Now
+          </button>
+        </div>
+      </div>
+      <hr class="border-b border-gray-100 opacity-25 my-0 py-0">
+    </nav>
+    <!--Hero-->
+    <div class="pt-24 bg-gray-100">
+      <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+        <!--Left Column – Hero Text-->
+        <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
+          <p class="uppercase tracking-loose w-full text-pink-600">Welcome to Hanoi Helpers</p>
+          <h1 class="my-4 text-5xl font-bold leading-tight text-gray-800">
+            Making Life in Hanoi Easier for Foreigners
+          </h1>
+          <p class="leading-normal text-2xl mb-8">
+            Explore our trusted services in elderly care, legal support, and electronic equipment – all tailored to your needs.
+          </p>
+          <button class="mx-auto lg:mx-0 hover:underline bg-pink-600 text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+            Get Started
+          </button>
+        </div>
+        <!--Right Column – Hero Image-->
+        <div class="w-full md:w-3/5 py-6 text-center">
+          <img class="hero-img" src="https://images.unsplash.com/photo-1559234938-b60fff04894d?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3MzQ0MzV8MHwxfHNlYXJjaHwxfHxFbGRlcmx5fGVufDB8fHx8MTc0OTYzMzM2NHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Elderly couple taking a walk through the park">
+        </div>
+      </div>
+    </div>
+    <!-- Services Section -->
+    <section id="services" class="bg-white border-b py-8">
+      <div class="container mx-auto max-w-5xl m-8">
+        <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+          Our Services
+        </h2>
+        <div class="w-full mb-4">
+          <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+        </div>
+        <div class="flex flex-wrap -mx-4">
+          <!-- Elderly Care -->
+          <div class="w-full md:w-1/3 px-4 py-4">
+            <div class="bg-gray-50 rounded-lg shadow p-6 h-full">
+              <img class="service-img" src="https://images.unsplash.com/photo-1575467678930-c7acd65d6470?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3MzQ0MzV8MHwxfHNlYXJjaHw0fHxFbGRlcmx5fGVufDB8fHx8MTc0OTYzMzM2NHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Elderly woman cleaning vegetables">
+              <h3 class="text-2xl font-bold text-gray-800 mt-4">Elderly Care</h3>
+              <p class="text-gray-600 mt-2">
+                Personalized support for elderly expats—from daily assistance and companionship to healthcare guidance. We understand the importance of maintaining dignity and independence.
+              </p>
+              <p class="text-gray-800 font-bold mt-4">Starting at: £29.99/day</p>
+              <p class="mt-2"><strong>Contact:</strong> care@hanohelpers.com | +84 123 456 789</p>
+            </div>
+          </div>
+          <!-- Legal Procedures -->
+          <div class="w-full md:w-1/3 px-4 py-4">
+            <div class="bg-gray-50 rounded-lg shadow p-6 h-full">
+              <img class="service-img" src="https://images.unsplash.com/photo-1513159446162-54eb8bdaa79b?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3MzQ0MzV8MHwxfHNlYXJjaHwyfHxFbGRlcmx5fGVufDB8fHx8MTc0OTYzMzM2NHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Two men playing chess symbolizing legal strategy">
+              <h3 class="text-2xl font-bold text-gray-800 mt-4">Legal Procedures</h3>
+              <p class="text-gray-600 mt-2">
+                Expert assistance for visas, property regulations, business licenses and more. Our legal advisors ensure you have all the support to navigate Hanoi’s legal landscape.
+              </p>
+              <p class="text-gray-800 font-bold mt-4">Consultation: £49.99/hr</p>
+              <p class="mt-2"><strong>Contact:</strong> legal@hanohelpers.com | +84 987 654 321</p>
+            </div>
+          </div>
+          <!-- Electronic Equipment -->
+          <div class="w-full md:w-1/3 px-4 py-4">
+            <div class="bg-gray-50 rounded-lg shadow p-6 h-full">
+              <img class="service-img" src="https://images.unsplash.com/photo-1454875392665-2ac2c85e8d3e?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3MzQ0MzV8MHwxfHNlYXJjaHwzfHxFbGRlcmx5fGVufDB8fHx8MTc0OTYzMzM2NHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Close-up hand which reflects modern precision">
+              <h3 class="text-2xl font-bold text-gray-800 mt-4">Electronic Equipment</h3>
+              <p class="text-gray-600 mt-2">
+                Shop the latest gadgets and appliances ideal for expats. We source high-quality electronic products with local warranties and dedicated after-sales support.
+              </p>
+              <p class="text-gray-800 font-bold mt-4">Prices from: £19.99</p>
+              <p class="mt-2"><strong>Contact:</strong> tech@hanohelpers.com | +84 555 666 777</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Blog Section -->
+    <section id="blog" class="bg-gray-100 border-b py-8">
+      <div class="container mx-auto max-w-5xl m-8">
+        <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+          From Our Blog
+        </h2>
+        <div class="w-full mb-4">
+          <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+        </div>
+        <div class="flex flex-wrap -mx-4">
+          <!-- Blog Post 1 -->
+          <div class="w-full md:w-1/3 px-4 py-4">
+            <div class="bg-white rounded-lg shadow p-6 h-full">
+              <img class="blog-img" src="https://images.unsplash.com/photo-1661933012684-d2ab1d613258?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3MzQ0MzV8MHwxfHNlYXJjaHw1fHxFbGRlcmx5fGVufDB8fHx8MTc0OTYzMzM2NHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="A man sitting in a park">
+              <h3 class="text-2xl font-bold text-gray-800 mt-4">Living in Hanoi: A Foreigner’s Guide</h3>
+              <p class="text-gray-600 mt-2">
+                Discover tips and tricks about navigating the bustling city of Hanoi—from cultural etiquette to finding the best local eateries.
+              </p>
+              <a href="#" class="text-pink-600 font-bold mt-4 inline-block">Read More</a>
+            </div>
+          </div>
+          <!-- Blog Post 2 -->
+          <div class="w-full md:w-1/3 px-4 py-4">
+            <div class="bg-white rounded-lg shadow p-6 h-full">
+              <img class="blog-img" src="https://images.unsplash.com/photo-1534768654272-e97681c3a2c7?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3MzQ0MzV8MHwxfHNlYXJjaHw3fHxFbGRlcmx5fGVufDB8fHx8MTc0OTYzMzM2NHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="A touching moment between a mother and her great grandson">
+              <h3 class="text-2xl font-bold text-gray-800 mt-4">Building Connections in a New City</h3>
+              <p class="text-gray-600 mt-2">
+                Read inspiring stories from expats who found family, friendship, and support while adjusting to life in Hanoi.
+              </p>
+              <a href="#" class="text-pink-600 font-bold mt-4 inline-block">Read More</a>
+            </div>
+          </div>
+          <!-- Blog Post 3 -->
+          <div class="w-full md:w-1/3 px-4 py-4">
+            <div class="bg-white rounded-lg shadow p-6 h-full">
+              <img class="blog-img" src="https://images.unsplash.com/photo-1517267667008-3b8018f4b4f7?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3MzQ0MzV8MHwxfHNlYXJjaHw4fHxFbGRlcmx5fGVufDB8fHx8MTc0OTYzMzM2NHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Signore anziano during the golden hour">
+              <h3 class="text-2xl font-bold text-gray-800 mt-4">Navigating Legal Hurdles in Hanoi</h3>
+              <p class="text-gray-600 mt-2">
+                Our experts break down the legal procedures and paperwork needed for residency, business establishment, and more.
+              </p>
+              <a href="#" class="text-pink-600 font-bold mt-4 inline-block">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section with Form -->
+    <section id="contact" class="bg-white border-b py-8">
+      <div class="container mx-auto max-w-3xl m-8">
+        <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+          Get in Touch
+        </h2>
+        <div class="w-full mb-4">
+          <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+        </div>
+        <div class="w-full mt-8">
+          <form action="#" method="post" class="w-full max-w-lg mx-auto">
+            <div class="flex flex-wrap -mx-3 mb-6">
+              <div class="w-full px-3 mb-6 md:mb-0">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="name">
+                  Name
+                </label>
+                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white" id="name" type="text" placeholder="Your Name">
+              </div>
+            </div>
+            <div class="flex flex-wrap -mx-3 mb-6">
+              <div class="w-full px-3">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="email">
+                  Email
+                </label>
+                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white" id="email" type="email" placeholder="you@example.com">
+              </div>
+            </div>
+            <div class="flex flex-wrap -mx-3 mb-6">
+              <div class="w-full px-3">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="message">
+                  Message
+                </label>
+                <textarea class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white" id="message" rows="5" placeholder="How can we help you?"></textarea>
+              </div>
+            </div>
+            <div class="md:flex md:items-center">
+              <div class="md:w-1/3">
+                <button class="shadow bg-pink-600 hover:bg-pink-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit">
+                  Send Message
+                </button>
+              </div>
+              <div class="md:w-2/3"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- Pricing Section -->
+    <section class="bg-gray-100 py-8">
+      <div class="container mx-auto max-w-5xl px-2 pt-4 pb-12 text-gray-800">
+        <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+          Pricing Plans
+        </h2>
+        <div class="w-full mb-4">
+          <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+        </div>
+        <div class="flex flex-col sm:flex-row justify-center pt-12 my-12 sm:my-4">
+          <!-- Free Plan -->
+          <div class="flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-none lg:rounded-l-lg bg-white mt-4">
+            <div class="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow">
+              <div class="p-8 text-3xl font-bold text-center border-b-4">
+                Basic
+              </div>
+              <ul class="w-full text-center text-sm">
+                <li class="border-b py-4">Access to Blog Articles</li>
+                <li class="border-b py-4">Community Support</li>
+                <li class="border-b py-4">Basic Service Info</li>
+              </ul>
+            </div>
+            <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+              <div class="w-full pt-6 text-3xl text-gray-600 font-bold text-center">
+                Free
+                <span class="text-base">for one user</span>
+              </div>
+              <div class="flex items-center justify-center">
+                <button class="mx-auto hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                  Sign Up
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Premium Plan -->
+          <div class="flex flex-col w-5/6 lg:w-1/3 mx-auto lg:mx-0 rounded-lg bg-white mt-4 sm:-mt-6 shadow-lg z-10">
+            <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+              <div class="w-full p-8 text-3xl font-bold text-center">Premium</div>
+              <div class="h-1 w-full gradient my-0 py-0 rounded-t"></div>
+              <ul class="w-full text-center text-base font-bold">
+                <li class="border-b py-4">All Basic Features</li>
+                <li class="border-b py-4">Priority Customer Support</li>
+                <li class="border-b py-4">Exclusive Service Discounts</li>
+                <li class="border-b py-4">Legal &amp; Tech Consultations</li>
+              </ul>
+            </div>
+            <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+              <div class="w-full pt-6 text-4xl font-bold text-center">
+                £x.99
+                <span class="text-base">/ per user</span>
+              </div>
+              <div class="flex items-center justify-center">
+                <button class="mx-auto hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                  Sign Up
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Pro Plan -->
+          <div class="flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-none lg:rounded-r-lg bg-white mt-4">
+            <div class="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow">
+              <div class="p-8 text-3xl font-bold text-center border-b-4">
+                Pro
+              </div>
+              <ul class="w-full text-center text-sm">
+                <li class="border-b py-4">All Premium Features</li>
+                <li class="border-b py-4">Dedicated Account Manager</li>
+                <li class="border-b py-4">24/7 Customer Support</li>
+              </ul>
+            </div>
+            <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+              <div class="w-full pt-6 text-3xl text-gray-600 font-bold text-center">
+                £x.99
+                <span class="text-base">/ per user</span>
+              </div>
+              <div class="flex items-center justify-center">
+                <button class="mx-auto hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                  Sign Up
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Call to Action / Contact Reminder -->
+    <section class="container mx-auto text-center py-6 mb-12">
+      <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+        Ready to Begin Your Journey?
+      </h2>
+      <div class="w-full mb-4">
+        <div class="h-1 mx-auto bg-pink-600 w-1/6 opacity-25 my-0 py-0 rounded-t"></div>
+      </div>
+      <h3 class="my-4 text-3xl leading-tight">
+        Explore our services and get personalized support tailored for your new life in Hanoi.
+      </h3>
+      <button onclick="document.getElementById('contact').scrollIntoView();" class="mx-auto hover:underline bg-pink-600 text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+        Contact Us
+      </button>
+    </section>
+    <!--Footer-->
+    <footer class="bg-white">
+      <div class="container mx-auto px-8">
+        <div class="w-full flex flex-col md:flex-row py-6">
+          <div class="flex-1 mb-6 text-black">
+            <a class="text-pink-600 no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
+              <svg class="h-8 fill-current inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.005 512.005">
+                <rect fill="#2a2a31" x="16.539" y="425.626" width="479.767" height="50.502" transform="matrix(1,0,0,1,0,0)"></rect>
+                <path class="plane-take-off" d=" M 510.7 189.151 C 505.271 168.95 484.565 156.956 464.365 162.385 L 330.156 198.367 L 155.924 35.878 L 107.19 49.008 L 211.729 230.183 L 86.232 263.767 L 36.614 224.754 L 0 234.603 L 45.957 314.27 L 65.274 347.727 L 105.802 336.869 L 240.011 300.886 L 349.726 271.469 L 483.935 235.486 C 504.134 230.057 516.129 209.352 510.7 189.151 Z "></path>
+              </svg>
+              Hanoi Helpers
+            </a>
+          </div>
+          <div class="flex-1">
+            <p class="uppercase text-gray-500 md:mb-6">Links</p>
+            <ul class="list-reset mb-6">
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <a href="#faq" class="no-underline hover:underline text-gray-800 hover:text-pink-500">FAQ</a>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <a href="#help" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Help</a>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <a href="#support" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Support</a>
+              </li>
+            </ul>
+          </div>
+          <div class="flex-1">
+            <p class="uppercase text-gray-500 md:mb-6">Legal</p>
+            <ul class="list-reset mb-6">
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <a href="#terms" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Terms</a>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <a href="#privacy" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Privacy</a>
+              </li>
+            </ul>
+          </div>
+          <div class="flex-1">
+            <p class="uppercase text-gray-500 md:mb-6">Social</p>
+            <ul class="list-reset mb-6">
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <a href="https://www.facebook.com" class="no-underline hover:underline text-gray-800 hover:text-pink-500" target="_blank">Facebook</a>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <a href="https://www.linkedin.com" class="no-underline hover:underline text-gray-800 hover:text-pink-500" target="_blank">Linkedin</a>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <a href="https://www.twitter.com" class="no-underline hover:underline text-gray-800 hover:text-pink-500" target="_blank">Twitter</a>
+              </li>
+            </ul>
+          </div>
+          <div class="flex-1">
+            <p class="uppercase text-gray-500 md:mb-6">Company</p>
+            <ul class="list-reset mb-6">
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <a href="#blog" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Official Blog</a>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <a href="#about" class="no-underline hover:underline text-gray-800 hover:text-pink-500">About Us</a>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <a href="#contact" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <a href="https://www.freepik.com/free-photos-vectors/background" class="text-gray-500 block text-center py-4">Background vector created by freepik - www.freepik.com</a>
+    </footer>
+    <!-- jQuery if you need it
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  -->
+    <script>
+      var scrollpos = window.scrollY;
+      var header = document.getElementById("header");
+      var navcontent = document.getElementById("nav-content");
+      var navaction = document.getElementById("navAction");
+      var toToggle = document.querySelectorAll(".toggleColour");
+
+      document.addEventListener("scroll", function () {
+        scrollpos = window.scrollY;
+
+        if (scrollpos > 10) {
+          header.classList.add("bg-white");
+          navaction.classList.remove("bg-white");
+          navaction.classList.add("gradient");
+          navaction.classList.remove("text-gray-800");
+          navaction.classList.add("text-white");
+          for (var i = 0; i < toToggle.length; i++) {
+            toToggle[i].classList.add("text-gray-800");
+            toToggle[i].classList.remove("text-white");
+          }
+          header.classList.add("shadow");
+          navcontent.classList.remove("bg-gray-100");
+          navcontent.classList.add("bg-white");
+        } else {
+          header.classList.remove("bg-white");
+          navaction.classList.remove("gradient");
+          navaction.classList.add("bg-white");
+          navaction.classList.remove("text-white");
+          navaction.classList.add("text-gray-800");
+          for (var i = 0; i < toToggle.length; i++) {
+            toToggle[i].classList.add("text-white");
+            toToggle[i].classList.remove("text-gray-800");
+          }
+          header.classList.remove("shadow");
+          navcontent.classList.remove("bg-white");
+          navcontent.classList.add("bg-gray-100");
+        }
+      });
+    </script>
+    <script>
+      var navMenuDiv = document.getElementById("nav-content");
+      var navMenu = document.getElementById("nav-toggle");
+
+      document.onclick = check;
+      function check(e) {
+        var target = (e && e.target) || (event && event.srcElement);
+        if (!checkParent(target, navMenuDiv)) {
+          if (checkParent(target, navMenu)) {
+            if (navMenuDiv.classList.contains("hidden")) {
+              navMenuDiv.classList.remove("hidden");
+            } else {
+              navMenuDiv.classList.add("hidden");
+            }
+          } else {
+            navMenuDiv.classList.add("hidden");
+          }
+        }
+      }
+      function checkParent(t, elm) {
+        while (t.parentNode) {
+          if (t == elm) {
+            return true;
+          }
+          t = t.parentNode;
+        }
+        return false;
+      }
+    </script>
+  
+</body></html>
